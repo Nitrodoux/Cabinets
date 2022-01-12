@@ -1,0 +1,52 @@
+# Project: Baza_szafki
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Wpisywanie.o Wyswietlanie.o Zapisywanie.o Liczenie.o Menu.o Okleina.o Singleton.o Abstract.o
+LINKOBJ  = main.o Wpisywanie.o Wyswietlanie.o Zapisywanie.o Liczenie.o Menu.o Okleina.o Singleton.o Abstract.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Baza_szafki.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Wpisywanie.o: Wpisywanie.cpp
+	$(CPP) -c Wpisywanie.cpp -o Wpisywanie.o $(CXXFLAGS)
+
+Wyswietlanie.o: Wyswietlanie.cpp
+	$(CPP) -c Wyswietlanie.cpp -o Wyswietlanie.o $(CXXFLAGS)
+
+Zapisywanie.o: Zapisywanie.cpp
+	$(CPP) -c Zapisywanie.cpp -o Zapisywanie.o $(CXXFLAGS)
+
+Liczenie.o: Liczenie.cpp
+	$(CPP) -c Liczenie.cpp -o Liczenie.o $(CXXFLAGS)
+
+Menu.o: Menu.cpp
+	$(CPP) -c Menu.cpp -o Menu.o $(CXXFLAGS)
+
+Okleina.o: Okleina.cpp
+	$(CPP) -c Okleina.cpp -o Okleina.o $(CXXFLAGS)
+
+Singleton.o: Singleton.cpp
+	$(CPP) -c Singleton.cpp -o Singleton.o $(CXXFLAGS)
+
+Abstract.o: Abstract.cpp
+	$(CPP) -c Abstract.cpp -o Abstract.o $(CXXFLAGS)
